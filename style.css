@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(255, 230, 240);
+    color: rgb(58, 58, 58);
 }
 body{
     background:linear-gradient(to left, rgb(252, 137, 166), rgba(212, 201, 164, 0.849));
@@ -12,14 +12,14 @@ body{
 .container{
     width: 80%;
     margin: auto;
-    background-color: rgb(228, 53, 85);
+    background-color: rgb(252, 77, 109);
     border-radius: 5px;
 }
 .heading{
     padding: 20px 30px;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(206, 51, 85);
+    background-color: rgb(221, 30, 71);
     border-radius: 5px;
 }
 input {
@@ -41,14 +41,14 @@ input {
     justify-content: space-evenly;
 }
 .results{
-    border: 2px solid rgb(206, 51, 85);
+    border: 2px solid  rgb(221, 30, 71);
     width: 90%;
     margin: 0 auto;
 }
 .results h4{
     margin: 0;
     padding: 10px;
-    background-color: rgb(206, 51, 85);
+    background-color:  rgb(221, 30, 71);
 }
 .result-groups{
     display: flex;
@@ -71,9 +71,9 @@ input {
 #go {
     margin: 20px 0;
     padding: 10px 30px;
-    background-color: rgba(143, 14, 14, 0.842);
+    background-color: rgba(36, 8, 8, 0.842);
     border: none;
-    color: rgb(255, 162, 162);
+    color: rgb(255, 194, 194);
     font-family:monospace;
     font-size: large;
     font-weight: 600;
@@ -81,6 +81,8 @@ input {
 }
 #go:hover{
     cursor: pointer;
+    transition-duration: .3s;
+    transform: scale(1.02);
 }
 @media screen and (max-width:720px) {
     .container {

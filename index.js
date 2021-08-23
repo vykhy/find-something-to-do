@@ -66,6 +66,7 @@ function getPriceValue(string){
 
 /**
  * converts user string input to number inorder to call the api
+ * deprecated
  */
 function getParticipantValue(string){
     switch(string){
@@ -91,10 +92,10 @@ async function getActivities()
 {
     const types = ['education','recreational','diy','social','charity','cooking','relaxation','music','busywork']
     //GET USER INPUTS
-    //let easiness = document.querySelector('#ease').value;
+    /*let easiness = document.querySelector('#ease').value;*/
+    /*let price = document.querySelector('#price').value*/
     let type = document.querySelector('#type').value.toLowerCase()
     let participants = document.querySelector('#participants').value
-    //let price = document.querySelector('#price').value
 
     let finalUrl = MAIN_URL;
 
@@ -107,6 +108,16 @@ async function getActivities()
         if(ease != 'invalid'){ 
             finalUrl = updateUrl(finalUrl)
             finalUrl += `accessibility=${ease}`
+        }
+    }
+    
+    //IF PRICE SET, UPDATE URL
+    if(price != 'Any' && price != ''){
+        let pricev = getPriceValue(price)
+
+        if(pricev != 'invalid'){ 
+            finalUrl = updateUrl(finalUrl)
+            finalUrl += `price=${pricev}`
         }
     }
     */
@@ -130,17 +141,6 @@ async function getActivities()
         }
     }
 
-    //IF PRICE SET, UPDATE URL
-    /*
-    if(price != 'Any' && price != ''){
-        let pricev = getPriceValue(price)
-
-        if(pricev != 'invalid'){ 
-            finalUrl = updateUrl(finalUrl)
-            finalUrl += `price=${pricev}`
-        }
-    }
-    */
 
     //CALL API
     const response = await fetch(finalUrl)
@@ -155,6 +155,9 @@ async function getActivities()
  */
 document.querySelector('#go').addEventListener('click', getActivities)
 
+/**
+ * To fix ui issue with datalist feature
+ */
 let inputs = document.querySelectorAll('input')
 inputs.forEach(input => {
     input.addEventListener('focus', ()=> {
