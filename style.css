@@ -1,16 +1,94 @@
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 230, 240);
+}
+body{
+    background:linear-gradient(to left, rgb(252, 137, 166), rgba(212, 201, 164, 0.849));
 }
 .container{
     width: 80%;
     margin: auto;
+    background-color: rgb(228, 53, 85);
+    border-radius: 5px;
 }
-
+.heading{
+    padding: 20px 30px;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(206, 51, 85);
+    border-radius: 5px;
+}
+input {
+    background-color: rgb(252, 137, 166);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(48, 48, 48);
+    font-size: 1.15rem;
+}
+.input-group{
+    padding: 10px;
+}
+.inputs{
+    padding: 10px ;
+}
 .row {
     display: flex;
     justify-content: space-evenly;
 }
+.results{
+    border: 2px solid rgb(206, 51, 85);
+    width: 90%;
+    margin: 0 auto;
+}
+.results h4{
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(206, 51, 85);
+}
 .result-groups{
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+.result-groups h6{
+    margin: 15px;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.result-group {
+    margin: 10px;
+}
+#activity-name{
+    padding: 20px;
+    min-height: 100px;
+    color: rgb(250, 224, 224);
+}
+#go {
+    margin: 20px 0;
+    padding: 10px 30px;
+    background-color: rgba(143, 14, 14, 0.842);
+    border: none;
+    color: rgb(255, 162, 162);
+    font-family:monospace;
+    font-size: large;
+    font-weight: 600;
+    width: 80%;
+}
+#go:hover{
+    cursor: pointer;
+}
+@media screen and (max-width:720px) {
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+    .result-groups, .row{
+        flex-wrap: wrap;
+    }
 }

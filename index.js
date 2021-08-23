@@ -1,5 +1,6 @@
 const MAIN_URL = 'https://www.boredapi.com/api/activity';
 
+/*GET THE PLACEHOLDERS FOR THE RESULTS */
 const activityH = document.querySelector('#activity-name')
 const priceH = document.querySelector('#price-value')
 const typeH = document.querySelector('#type-value')
@@ -10,6 +11,10 @@ const accessH = document.querySelector('#access-value')
  * function to update ui with api json data
  */
 function updateUI(json){
+    if(!json.activity){
+        activityH.innerText = 'NO ACTIVITIES WERE FOUND FOR THESE PARAMETERS!'
+        return
+    }
     activityH.innerText = json.activity
     priceH.innerText = getPriceValue(json.price)
     typeH.innerText = json.type 
@@ -137,11 +142,11 @@ async function getActivities()
     }
     */
 
-    //CALL API AND RETURN JSON
-    console.log(finalUrl)
+    //CALL API
     const response = await fetch(finalUrl)
     const json =  await response.json();
-    console.log(json)
+
+    /*UPDATE UI*/
     updateUI(json)
 }
 
