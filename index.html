@@ -4,33 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Find a random activity to do">
+    <meta name="description" content="Use this api service to find some interesting activitities to do.
+                Choose from various categories and number of participants. Fill your day with fun by finding
+                some interesting things to do">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
     <title>Find something to do</title>
 </head>
 <body>
     <div class="container">
+        <div class="heading">FIND SOMETHING TO DO</div>
         <div class="inputs">
             <div class="row">
-                <input list="types" id="type" type="text">
-                    <datalist id="types" >
-                        <option value="Any"></option>
-                        <option value="Education"></option>
-                        <option value="Recreational"></option>
-                        <option value="Social"></option>
-                        <option value="Diy"></option>
-                        <option value="Charity"></option>
-                        <option value="Cooking"></option>
-                        <option value="Relaxation"></option>
-                        <option value="Music"></option>
-                        <option value="Busywork"></option>
-                    </datalist>
-                <input id="participants" list="nos" type="text">
-                    <datalist id="nos">
-                        <option value="Any"></option>
-                        <option value="1"></option>
-                        <option value="2"></option>
-                        <option value="3"></option>
-                        <option value="5"></option>
-                    </datalist>
+                <div class="input-group">
+                    <label for="type">Choose the type of activity</label><br>
+                    <input list="types" id="type" value="Any" type="text">
+                        <datalist id="types" >
+                            <option value="Any"></option>
+                            <option value="Education"></option>
+                            <option value="Recreational"></option>
+                            <option value="Social"></option>
+                            <option value="Diy"></option>
+                            <option value="Charity"></option>
+                            <option value="Cooking"></option>
+                            <option value="Relaxation"></option>
+                            <option value="Music"></option>
+                            <option value="Busywork"></option>
+                        </datalist>
+                </div>
+                <div class="input-group">
+                    <label for="participants">Choose no. of participants</label><br>
+                    <input id="participants" list="nos" value="Any" type="text">
+                        <datalist id="nos">
+                            <option value="Any"></option>
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="5"></option>
+                        </datalist>
+                </div>
+                
 
 
                 <!-- <input id="price" list="prices" type="text">
@@ -50,6 +65,29 @@
                     </datalist> -->
 
 
+            </div>
+
+            <div class="results">
+                <h4>ACTIVITY</h4>
+                <h2 id="activity-name"></h2>
+                <div class="result-groups">
+                    <div class="result-group">
+                        <h6>Price</h6>
+                        <div id="price-value"></div>
+                    </div>
+                    <div class="result-group">
+                        <h6>Type</h6>
+                        <div id="type-value"></div>
+                    </div>
+                    <div class="result-group">
+                        <h6>Participants</h6>
+                        <div id="parts-value"></div>
+                    </div>
+                    <div class="result-group">
+                        <h6>Accessibility</h6>
+                        <div id="access-value"></div>
+                    </div>
+                </div>
             </div>
             <div class="button">
                 <button id="go">Get Activity</button>

@@ -1,5 +1,21 @@
 const MAIN_URL = 'https://www.boredapi.com/api/activity';
 
+const activityH = document.querySelector('#activity-name')
+const priceH = document.querySelector('#price-value')
+const typeH = document.querySelector('#type-value')
+const partsH = document.querySelector('#parts-value')
+const accessH = document.querySelector('#access-value')
+
+/**
+ * function to update ui with api json data
+ */
+function updateUI(json){
+    activityH.innerText = json.activity
+    priceH.innerText = getPriceValue(json.price)
+    typeH.innerText = json.type 
+    partsH.innerText = json.participants
+    accessH.innerText = getEaseValue(json.accessibility)
+}
 /**
  * attaches appropriate joiner to the url to add parameters
  */
@@ -12,42 +28,35 @@ function updateUrl(url){
 }
 
 /**
- * converts user string input to number inorder to call the api
+ * converts accessibility index from api to user friendly message
  */
 function getEaseValue(string){
-    switch(string){
-        case 'Very accessible':
-            return 0.2
-            break;
-        case 'Accessible':
-            return 0.4
-            break;
-        case 'Somewhat difficult':
-            return 0.7
-            break;
-        case 'Exclusive':
-            return 0.9
-            break;    
-        default:
-            return 'invalid'  
-    }
+    if(string <= 0.2) return 'Very easy'
+    
+    if(string <= 0.4) return 'Accessible'
+
+    if(string <= 0.7) return 'May be difficult'
+    
+    if(string > 0.7) return 'Not very probable'
+
+    return 'Looks like there was an error'
 }
 
 /**
- * converts user string input to number inorder to call the api
+ * converts price index from api to user-friendly message
  */
 function getPriceValue(string){
-    switch(string){
-        case 'Very low cost':
-            return 0
-            break;
-        case 'Affordable':
-            return 0.5
-            break;
-        case 'May be expensive':
-            return 0.9
-            break;   
-    }
+   if(string == 0) return 'free'
+        
+   if(string <= 0.2) return 'very affordable'
+
+   if(string <= 0.5) return 'Affordable'
+
+   if(string <= 0.7) return 'May be expensive'
+
+   if(string > 0.7) return 'Very expensive'  
+    
+   return 'Looks like there was an error'
 }
 
 /**
@@ -77,10 +86,10 @@ async function getActivities()
 {
     const types = ['education','recreational','diy','social','charity','cooking','relaxation','music','busywork']
     //GET USER INPUTS
-    let easiness = document.querySelector('#ease').value;
+    //let easiness = document.querySelector('#ease').value;
     let type = document.querySelector('#type').value.toLowerCase()
     let participants = document.querySelector('#participants').value
-    let price = document.querySelector('#price').value
+    //let price = document.querySelector('#price').value
 
     let finalUrl = MAIN_URL;
 
@@ -133,6 +142,7 @@ async function getActivities()
     const response = await fetch(finalUrl)
     const json =  await response.json();
     console.log(json)
+    updateUI(json)
 }
 
 /**
