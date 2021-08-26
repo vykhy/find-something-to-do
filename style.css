@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(58, 58, 58);
+    color: #fff;/*rgb(58, 58, 58);*/
 }
 body{
     background:linear-gradient(to left, rgb(252, 137, 166), rgba(212, 201, 164, 0.849));
@@ -12,18 +12,18 @@ body{
 .container{
     width: 80%;
     margin: auto;
-    background-color: rgb(252, 77, 109);
+    background-color: #192734;/*rgb(252, 77, 109);*/
     border-radius: 5px;
 }
 .heading{
     padding: 20px 30px;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(221, 30, 71);
+    background-color: #15202b;/*rgb(221, 30, 71);*/
     border-radius: 5px;
 }
 input {
-    background-color: rgb(252, 137, 166);
+    background-color: white;/*rgb(252, 137, 166);*/
     border: none;
     padding: 10px;
     border-radius: 5px;
@@ -41,14 +41,14 @@ input {
     justify-content: space-evenly;
 }
 .results{
-    border: 2px solid  rgb(221, 30, 71);
+    border: 2px solid #15202b;/* rgb(221, 30, 71);*/
     width: 90%;
     margin: 0 auto;
 }
 .results h4{
     margin: 0;
     padding: 10px;
-    background-color:  rgb(221, 30, 71);
+    background-color: #15202b;/* rgb(221, 30, 71);*/
 }
 .result-groups{
     display: flex;
@@ -71,7 +71,7 @@ input {
 #go {
     margin: 20px 0;
     padding: 10px 30px;
-    background-color: rgba(36, 8, 8, 0.842);
+    background-color: #17a2b8;/*rgba(36, 8, 8, 0.842);*/
     border: none;
     color: rgb(255, 194, 194);
     font-family:monospace;
